@@ -30,8 +30,13 @@ public class SwaggerConfig {
 	}
 
 	private SecurityScheme createJWT() {
-		// TODO Auto-generated method stub
-		return null;
+		return new SecurityScheme()
+	            .name("JWT")
+	            .type(SecurityScheme.Type.HTTP)
+	            .scheme("bearer")
+	            .bearerFormat("JWT")
+	            .in(SecurityScheme.In.HEADER)
+	            .name("Authorization");
 	}
 
 	@Bean
