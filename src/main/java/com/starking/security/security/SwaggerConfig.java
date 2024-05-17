@@ -46,4 +46,45 @@ public class SwaggerConfig {
 				.pathsToMatch("/**")
 				.build();
 	}
+	
+	/* Maneira mais verbosa */
+//	 public static final String SCHEME_NAME = "BearerScheme";
+//	    public static final String SCHEME = "Bearer";
+//
+//	    @Bean
+//	    public OpenAPI customOpenAPI() {
+//	        var openApi = new OpenAPI().info(this.apiInfo());
+//	        this.addSecurity(openApi);
+//	        return openApi;
+//	    }
+//
+//	    private Info apiInfo() {
+//	        var contact = new Contact();
+//	        contact.setEmail("mailbox@product.com");
+//	        contact.setName("product_admin");
+//	        contact.setUrl("http://product.com");
+//	        return new Info()
+//	            .title("Product API")
+//	                .description("Product description")
+//	                .termsOfService("http://product.com/terms_of_service")
+//	                .contact(contact)
+//	                // TODO: Version should be dynamically
+//	                .version("0.5.1");
+//	    }
+//
+//	    private void addSecurity(OpenAPI openApi) {
+//	        var components = this.createComponents();
+//	        var securityItem = new SecurityRequirement().addList(SCHEME_NAME);
+//	        openApi.components(components).addSecurityItem(securityItem);
+//	    }
+//
+//	    private Components createComponents() {
+//	        var components = new Components();
+//	        components.addSecuritySchemes(SCHEME_NAME, this.createSecurityScheme());
+//	        return components;
+//	    }
+//
+//	    private SecurityScheme createSecurityScheme() {
+//	        return new SecurityScheme().name(SCHEME_NAME).type(SecurityScheme.Type.HTTP).scheme(SCHEME);
+//	    }
 }
